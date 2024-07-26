@@ -2,7 +2,6 @@ import pandas as pd
 from tqdm import tqdm
 import numpy as np
 import os
-import openai
 import time 
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
