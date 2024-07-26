@@ -1,5 +1,4 @@
 import os
-import openai
 import streamlit as st
 from run_pipeline import run_pipeline
 
