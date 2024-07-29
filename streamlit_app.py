@@ -45,7 +45,7 @@ def main_gpt3emailgen():
             input_c1 = [input_c1.strip() for i in input_c1.split(',')]
             if st.button('Generate Report'):
                 st.write("Running extraction, please wait...") 
-                foa_report, foa_title = run_pipeline(input_c1)
+                foa_title, foa_report = run_pipeline(input_c1)
                 count += 1
     if count > 0:
         title = foa_title
