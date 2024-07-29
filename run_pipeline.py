@@ -286,7 +286,6 @@ def run_analysis(url_list, current_datestr):
 def combine_reports(batch_output_dict):
     final_report = ''
     for foa_name, foa_extract in batch_output_dict.items():
-        final_report += f'Report for {foa_name} '
         final_report += '\n'
         final_report += foa_extract 
         final_report += '\n'
