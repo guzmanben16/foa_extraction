@@ -49,7 +49,7 @@ def main_gpt3emailgen():
                 count += 1
     if count > 0:
         title = foa_title
-        with st.expander("Report", expanded=True):
+        with st.expander(f"{foa_title} - Report", expanded=True):
             st.markdown(foa_report)  #output the results
                
                 
