@@ -156,7 +156,7 @@ def generate_prompt(foa, current_datestr):
     
     Answer: <place your answer here>
 
-    Make sure the output is pretty printed. Make sure not to add back ticks in your output.
+    Make sure the output is pretty printed. Make sure not to add back ticks in your output. Make sure to put the questions in bold text. Add bullet points to answers that need enumeration. 
     
     Please make sure that you went through each step in the prompt mentioned above.
     """
