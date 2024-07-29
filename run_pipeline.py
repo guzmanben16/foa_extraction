@@ -280,7 +280,7 @@ def run_analysis(url_list, current_datestr):
         gpt_output_dict = {foa_title:run_genai(prompt)}
         batch_output_dict.update(gpt_output_dict)
         
-    return batch_output_dict
+    return batch_output_dict, foa_title
 
 
 def combine_reports(batch_output_dict):
@@ -303,11 +303,11 @@ def run_pipeline(url_list):
     code_version = '0.0.1'
     model_version = '0.0.1'
     
-    batch_output_dict = run_analysis(url_list, current_datestr)
+    batch_output_dict, foa_title = run_analysis(url_list, current_datestr)
     final_report = combine_reports(batch_output_dict)
     save_final_report(batch_output_dict)
     
-    return final_report
+    return foa_title, final_report
 
 if __name__ == "__main__":
-    final_report = run_pipeline(url_list)
+    foa_title, final_report = run_pipeline(url_list)
