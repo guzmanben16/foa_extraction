@@ -155,6 +155,8 @@ def generate_prompt(foa, current_datestr):
     Question Number: Question
     
     Answer: <place your answer here>
+
+    Make sure the output is pretty printed. 
     
     Please make sure that you went through each step in the prompt mentioned above.
     """
