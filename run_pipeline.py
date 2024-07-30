@@ -267,7 +267,7 @@ def create_single_report(foa_name, foa_extract):
 def save_final_report(batch_output_dict):
     doc = docx.Document()
 
-    doc = [create_single_report(doc, foa_name, foa_extract) for foa_name, foa_extract in batch_output_dict.items()][0]
+    doc = [create_single_report(foa_name, foa_extract) for foa_name, foa_extract in batch_output_dict.items()][0]
     
     datestr = datetime.now().strftime("%Y%m%d_%H%M%S")
     full_path = os.path.join('./', 'reports') 
