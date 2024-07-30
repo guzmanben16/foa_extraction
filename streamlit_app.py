@@ -52,7 +52,7 @@ def main_gpt3emailgen():
                 count += 1
         if input_c1 != '' and input_c2 != '':
             input_c1 = [i.strip() for i in input_c1.split(',')]
-            input_c2 = [i.strip() for i in input_c1.split(',')]
+            input_c2 = [i.strip() for i in input_c2.split(',')]
             input_c1 = input_c1 + input_c2
             if st.button('Generate Report'):
                 st.write("Running extraction, please wait...") 
