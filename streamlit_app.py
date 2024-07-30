@@ -1,6 +1,6 @@
 import os
 import streamlit as st
-from run_pipeline import run_pipeline
+from run_pipeline import run_pipeline, create_single_report
 
 # DESIGN implement changes to the standard streamlit UI/UX
 st.set_page_config(page_title="FOA Information Extraction Generator", page_icon="img_banner.png",)
@@ -76,6 +76,7 @@ def main_gpt3emailgen():
         st.subheader('\nFOA Extraction Reports\n')
         for output in output_list:
             foa_title_output, foa_report_output = output[0], output[1]
+            create_single_report(foa_name, foa_extract)
             with st.expander(f"{foa_title_output} - Report", expanded=True):
                 st.markdown(foa_report_output)  #output the results
                
