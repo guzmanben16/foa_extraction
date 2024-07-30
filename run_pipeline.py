@@ -148,7 +148,7 @@ def generate_prompt(foa, current_datestr):
     FOA:
     ``{foa}`` 
     
-    At the end of each answer, please make sure to enclose the word "Reference:" and the information pertaining to the exact section where the answered was retrieved in square brackets.    
+    At the end of each answer, please make sure to enclose the word Reference: and the information pertaining to the exact section where the answered was retrieved in square brackets.    
     Please do not include phrases like "here is the extracted information" in your output. 
     
     In your output, use this format:
