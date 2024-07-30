@@ -42,7 +42,7 @@ def main_gpt3emailgen():
         output_list = []
         input_c1 = st.text_input('Enter url(s) in the box. If multiple urls, delimit with a comma', 'url')
         if input_c1 != '':
-            input_c1 = [input_c1.strip() for i in input_c1.split(',')]
+            input_c1 = [i.strip() for i in input_c1.split(',')]
             if st.button('Generate Report'):
                 st.write("Running extraction, please wait...") 
                 for url in input_c1:
