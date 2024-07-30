@@ -39,7 +39,7 @@ def main_gpt3emailgen():
     count = 0
     st.subheader('\nWhat is the url link to the FOA you want to analyze?\n')
     with st.expander("FOA URL input", expanded=True):
-    output_list = []
+        output_list = []
         input_c1 = st.text_input('Enter url(s) in the box. If multiple urls, delimit with a comma', 'url')
         if input_c1 != '':
             input_c1 = [input_c1.strip() for i in input_c1.split(',')]
