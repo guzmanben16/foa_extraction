@@ -272,6 +272,7 @@ def save_final_report(batch_output_dict):
     return doc   
 
 def run_analysis(url_list, current_datestr):
+    url_list = [url]
     batch_output_dict = {}
     for ix, url in enumerate(url_list):
         print(f'processing {ix}, {url}')
