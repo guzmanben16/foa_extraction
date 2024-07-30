@@ -238,7 +238,7 @@ def save_report(final_df, current_datestr):
 
 
 def create_single_report(doc, foa_name, foa_extract):
-    
+    doc = docx.Document()
     par = doc.add_paragraph()
     section_header = f'{foa_name}'
     header = par.add_run(section_header)    
@@ -252,6 +252,15 @@ def create_single_report(doc, foa_name, foa_extract):
     main_text.font.size = docx.shared.Pt(12)
     
     doc.add_page_break() 
+
+    datestr = datetime.now().strftime("%Y%m%d_%H%M%S")
+    full_path = os.path.join('./', 'reports') 
+    if not os.path.isdir(full_path):
+        os.makedirs(full_path)
+    
+    fname = os.path.join(full_path, f'foa_report_{datestr}.docx')
+    print(f'Final report saved as {fname}')
+    doc.save(fname)
     
     return doc
 
