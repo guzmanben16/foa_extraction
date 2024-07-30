@@ -40,8 +40,9 @@ def main_gpt3emailgen():
     st.subheader('\nWhat is the url link to the FOA you want to analyze?\n')
     with st.expander("FOA URL input", expanded=True):
         output_list = []
-        input_c1 = st.text_input('Enter url(s) in the box. If multiple urls, delimit with a comma', 'url')
-        if input_c1 != '':
+        input_c1 = st.text_input('Enter url(s) in the box. If multiple urls, delimit with a comma')
+        input_c2 = st.text_input('Enter url(s) in the box. If multiple urls, delimit with a comma')
+        if input_c1 != '' and input c2 == '':
             input_c1 = [i.strip() for i in input_c1.split(',')]
             if st.button('Generate Report'):
                 st.write("Running extraction, please wait...") 
@@ -49,6 +50,28 @@ def main_gpt3emailgen():
                     foa_title, foa_report = run_pipeline(url)
                     output_list.append((foa_title, foa_report))
                 count += 1
+        if input_c1 != '' and input c2 != '':
+            input_c1 = [i.strip() for i in input_c1.split(',')]
+            input_c2 = [i.strip() for i in input_c1.split(',')]
+            input_c1 = input_c1 + input_c2
+            if st.button('Generate Report'):
+                st.write("Running extraction, please wait...") 
+                for url in input_c1:
+                    foa_title, foa_report = run_pipeline(url)
+                    output_list.append((foa_title, foa_report))
+                count += 1
+        if input_c1 == '' and input c2 != '':
+            input_c2 = [i.strip() for i in input_c2.split(',')]
+            if st.button('Generate Report'):
+                st.write("Running extraction, please wait...") 
+                for url in input_c2:
+                    foa_title, foa_report = run_pipeline(url)
+                    output_list.append((foa_title, foa_report))
+                count += 1
+
+        if input_c1 == '' and input c2 == '':
+            if st.button('Generate Report'):
+                st.write("Please input at least one url into the boxes") 
     if count > 0:
         st.subheader('\nFOA Extraction Reports\n')
         for output in output_list:
