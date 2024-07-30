@@ -38,7 +38,7 @@ def main_gpt3emailgen():
     
     count = 0
     st.subheader('\nWhat are the FOA(s) you want to analyze?\n')
-    with st.expander("FOA URL input - You many analyze two FOAs per session.", expanded=True):
+    with st.expander("FOA URL input - You many analyze up to two FOAs per session.", expanded=True):
         output_list = []
         input_c1 = st.text_input('Enter the first foa url you want to analyze.')
         input_c2 = st.text_input('Enter the second foa url you want to analyze.')
