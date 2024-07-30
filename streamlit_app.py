@@ -39,18 +39,22 @@ def main_gpt3emailgen():
     count = 0
     st.subheader('\nWhat is the url link to the FOA you want to analyze?\n')
     with st.expander("FOA URL input", expanded=True):
-   
+    output_list = []
         input_c1 = st.text_input('Enter url(s) in the box. If multiple urls, delimit with a comma', 'url')
         if input_c1 != '':
             input_c1 = [input_c1.strip() for i in input_c1.split(',')]
             if st.button('Generate Report'):
                 st.write("Running extraction, please wait...") 
-                foa_title, foa_report = run_pipeline(input_c1)
+                for url in input_c1:
+                    foa_title, foa_report = run_pipeline(url)
+                    output_list.append((foa_title, foa_report))
                 count += 1
     if count > 0:
         st.subheader('\nFOA Extraction Reports\n')
-        with st.expander(f"{foa_title} - Report", expanded=True):
-            st.markdown(foa_report)  #output the results
+        for output in output_list:
+            foa_title_output, foa_report_output = output[0], output[1]
+            with st.expander(f"{foa_title_output} - Report", expanded=True):
+                st.markdown(foa_report_output)  #output the results
                
                 
 if __name__ == '__main__':
