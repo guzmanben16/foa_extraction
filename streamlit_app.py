@@ -50,7 +50,7 @@ def main_gpt3emailgen():
                     foa_title, foa_report = run_pipeline(url)
                     output_list.append((foa_title, foa_report))
                 count += 1
-        if input_c1 != '' and input c2 != '':
+        if input_c1 != '' and input_c2 != '':
             input_c1 = [i.strip() for i in input_c1.split(',')]
             input_c2 = [i.strip() for i in input_c1.split(',')]
             input_c1 = input_c1 + input_c2
@@ -60,7 +60,7 @@ def main_gpt3emailgen():
                     foa_title, foa_report = run_pipeline(url)
                     output_list.append((foa_title, foa_report))
                 count += 1
-        if input_c1 == '' and input c2 != '':
+        if input_c1 == '' and input_c2 != '':
             input_c2 = [i.strip() for i in input_c2.split(',')]
             if st.button('Generate Report'):
                 st.write("Running extraction, please wait...") 
@@ -69,7 +69,7 @@ def main_gpt3emailgen():
                     output_list.append((foa_title, foa_report))
                 count += 1
 
-        if input_c1 == '' and input c2 == '':
+        if input_c1 == '' and input_c2 == '':
             if st.button('Generate Report'):
                 st.write("Please input at least one url into the boxes") 
     if count > 0:
