@@ -315,7 +315,7 @@ def run_pipeline(url_list):
     
     batch_output_dict = run_analysis(url_list, current_datestr)
     foa_name, final_report = combine_reports(batch_output_dict)
-    save_final_report(batch_output_dict)
+    #save_final_report(batch_output_dict)
     
     return foa_name, final_report
 
