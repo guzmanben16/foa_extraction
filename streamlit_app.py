@@ -41,7 +41,7 @@ def main_gpt3emailgen():
     with st.expander("FOA URL input - You many analyze two FOAs per session.", expanded=True):
         output_list = []
         input_c1 = st.text_input('Enter the first foa url you want to analyze.')
-        input_c2 = st.text_input('Enter the second foa url you want to analyze.)
+        input_c2 = st.text_input('Enter the second foa url you want to analyze.')
         if input_c1 != '' and input_c2 == '':
             input_c1 = [i.strip() for i in input_c1.split(',')]
             if st.button('Generate Report'):
