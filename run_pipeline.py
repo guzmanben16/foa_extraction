@@ -148,7 +148,7 @@ def generate_prompt(foa, current_datestr):
     FOA:
     ``{foa}`` 
     
-    Please make sure to enclose the information pertaining to the exact section where the answered was retrieved in square brackets and start with the phrase "Information found from".    
+    Please make sure to enclose the information pertaining to the exact section where the answered was retrieved in square brackets and add the word Reference:.    
     Please do not include phrases like "here is the extracted information" in your output. 
     
     In your output, use this format:
