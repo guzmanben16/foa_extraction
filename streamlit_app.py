@@ -74,6 +74,7 @@ def main_gpt3emailgen():
                 st.write("Please input at least one url into the boxes") 
     if count > 0:
         st.subheader('\nFOA Extraction Reports\n')
+        st.write("Click on the tabs below to view the reports for each FOA. You may also downwload a word document version of the report.") 
         for output in output_list:
             foa_title_output, foa_report_output = output[0], output[1]
             fname = create_single_report(foa_title_output, foa_report_output)
