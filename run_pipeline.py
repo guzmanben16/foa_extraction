@@ -237,7 +237,7 @@ def save_report(final_df, current_datestr):
     return fname, base_fname
 
 
-def create_single_report(doc, foa_name, foa_extract):
+def create_single_report(foa_name, foa_extract):
     doc = docx.Document()
     par = doc.add_paragraph()
     section_header = f'{foa_name}'
@@ -258,11 +258,11 @@ def create_single_report(doc, foa_name, foa_extract):
     if not os.path.isdir(full_path):
         os.makedirs(full_path)
     
-    fname = os.path.join(full_path, f'foa_report_{datestr}.docx')
+    fname = os.path.join(full_path, f'foa_report_{foa_name}_{datestr}.docx')
     print(f'Final report saved as {fname}')
     doc.save(fname)
     
-    return doc
+    return fname
 
 def save_final_report(batch_output_dict):
     doc = docx.Document()
