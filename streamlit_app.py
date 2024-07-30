@@ -80,7 +80,7 @@ def main_gpt3emailgen():
             with st.expander(f"{foa_title_output} - Report", expanded=True):
                 st.markdown(foa_report_output)  #output the results
             with open(fname, 'rb') as f:
-                st.download_button(f'Download Report for {foa_title_output'}', f, file_name=f'{fname}')
+                st.download_button(f'Download Report for {foa_title_output}', f, file_name=f'{fname}')
                
                 
 if __name__ == '__main__':
