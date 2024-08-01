@@ -34,8 +34,9 @@ def run_genai(prompt):
     while response_count < 1:
         try:
             response = model.generate_content(f'{prompt}', generation_config=genai.types.GenerationConfig(temperature=0.0, max_output_tokens=20000))
+            text = response.text
             response_count += 1
-            return response.text
+            return text
         except:
             continue
 
