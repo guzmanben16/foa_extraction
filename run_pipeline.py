@@ -29,11 +29,15 @@ import docx
 def run_genai(prompt):
     genai.configure(api_key=config.api_key)
     model = genai.GenerativeModel(config.model)
-    response = model.generate_content(f'{prompt}', generation_config=genai.types.GenerationConfig(temperature=0.0, max_output_tokens=20000))
-    try:
-        return response.text
-    except:
-        return 'error response'
+    
+    response_count = 0
+    while response_count < 1:
+        try:
+            response = model.generate_content(f'{prompt}', generation_config=genai.types.GenerationConfig(temperature=0.0, max_output_tokens=20000))
+            response_count += 1
+            return response.text
+        except:
+            continue
 
 def parse_html(url):
     
