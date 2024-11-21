@@ -3,7 +3,8 @@ from tqdm import tqdm
 import numpy as np
 import os
 import time 
-from urllib.request import urlopen
+#from urllib.request import urlopen
+import urllib.request
 from bs4 import BeautifulSoup
 import requests
 import json
@@ -44,7 +45,10 @@ def parse_html(url):
     
     foa_title = url.split('files/')[1].split('.html')[0]
     
-    html = urlopen(url).read()
+    #html = urlopen(url).read()
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    response = urllib.request.urlopen(req)
+    html = response.read()
     soup = BeautifulSoup(html, features="html.parser")
 
     for script in soup(["script", "style"]):
@@ -63,7 +67,10 @@ def parse_html(url):
 def parse_html_template(url):
 
     
-    html = urlopen(url).read()
+    #html = urlopen(url).read()
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    response = urllib.request.urlopen(req)
+    html = response.read()
     soup = BeautifulSoup(html, features="html.parser")
 
     for script in soup(["script", "style"]):
